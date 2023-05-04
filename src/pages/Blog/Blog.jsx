@@ -1,11 +1,16 @@
-import React from "react";
+import React, { createRef } from "react";
 import { FiDownload } from "react-icons/fi";
-
+import Pdf from 'react-to-pdf';
+const ref = createRef();
 const Blog = () => {
   return (
     <div className="container mx-auto p-5 py-16">
-      <h2 className="text-5xl font-semibold mb-5">Blog <button><FiDownload /></button></h2>
-      <div>
+      <h2 className="text-5xl font-semibold mb-5">Blog
+      <Pdf targetRef={ref} filename="blog.pdf">
+        {({ toPdf }) => <button onClick={toPdf}><FiDownload /></button>}
+      </Pdf>
+      </h2>
+      <div ref={ref}>
         <div className="p-5 shadow mb-3">
           <h3 className="text-2xl font-semibold mb-3">
             Tell us the differences between uncontrolled and controlled

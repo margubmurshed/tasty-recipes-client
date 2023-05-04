@@ -3,6 +3,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import {SiStarship} from 'react-icons/si';
 import {MdFastfood} from 'react-icons/md';
 import {AiFillLike} from 'react-icons/ai';
+import LazyLoad from "react-lazy-load";
 
 const ChefsSection = () => {
   const { chefs } = useLoaderData();
@@ -14,11 +15,12 @@ const ChefsSection = () => {
           ({ id, name, photo_url, recipe_count, years_of_experience }) => (
             <div className="card bg-base-100 shadow-xl" key={id}>
               <figure>
+                <LazyLoad offset={200} className="h-52 w-full object-cover object-top">
                 <img
                   src={photo_url}
-                  className="h-52 w-full object-cover object-top"
                   alt="chefs"
                 />
+                </LazyLoad>
               </figure>
               <div className="card-body">
                 <h2 className="card-title">{name}</h2>
