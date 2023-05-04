@@ -39,7 +39,7 @@ const Register = () => {
       <div className="hidden md:block">
         <img src={photo} className="w-full object-cover h-image-fixed" />
       </div>
-      <div className="card flex-shrink-0 w-full px-10 md:overflow-y-auto">
+      <div className="card flex-shrink-0 w-full md:px-10 md:overflow-y-auto">
         <div className="card-body">
           <div className="pt-5">
             <h2 className="text-3xl font-semibold">

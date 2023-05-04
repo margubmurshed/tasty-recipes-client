@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ChefRecipeHeroBG from "../../assets/ChefRecipes/hero-background.jpg";
 import { useLoaderData } from "react-router-dom";
 import { SiStarship } from "react-icons/si";
@@ -10,12 +10,20 @@ import "@smastrom/react-rating/style.css";
 const ChefRecipes = () => {
   const [chefDetails, chefRecipes] = useLoaderData();
   const [favorites, setFavorites] = useState([]);
-  const { chefID, name, photo_url, years_of_experience, recipe_count } =
+  const { id:chefID, name, photo_url, years_of_experience, recipe_count } =
     chefDetails;
 
   const handleSetFavorite = (id) => {
-    setFavorites([...favorites, {cID: chefID, recipeID:id}])
+    const updatedFavorites = [...favorites, {cID: chefID, recipeID:id}]
+    setFavorites(updatedFavorites);
+    localStorage.setItem('favorites', JSON.stringify(updatedFavorites))
   }
+
+  useEffect(() => {
+    const jsonData = localStorage.getItem('favorites');
+    const fetchedFavorites = jsonData ? JSON.parse(jsonData) : [];
+    setFavorites(fetchedFavorites);
+  }, [])
   return (
     <div>
       <div
@@ -32,7 +40,7 @@ const ChefRecipes = () => {
                 <img src={photo_url} />
               </div>
             </div>
-            <h1 className="mb-5 text-5xl font-bold">{name}</h1>
+            <h1 className="mb-5 text-2xl md:text-5xl font-bold">{name}</h1>
             <p className="mb-5">
               {name} is a renowned American chef who has made a name for himself
               in the culinary world through his passion for bold flavors and
@@ -40,7 +48,7 @@ const ChefRecipes = () => {
               decades, Bobby has become a household name and has cemented
               himself as one of America's most celebrated chefs.
             </p>
-            <div className="stats shadow">
+            <div className="stats shadow grid-flow-row w-full md:w-fit md:grid-flow-col">
               <div className="stat">
                 <div className="stat-figure text-secondary">
                   <SiStarship size={30} color="rgb(249 115 22)" />
@@ -76,7 +84,7 @@ const ChefRecipes = () => {
               );
               return (
                 <div
-                  className="p-5 rounded-md shadow-md border self-start"
+                  className={`p-5 rounded-md shadow-md border ${isFavourite ? 'border-secondary' : ""} self-start`}
                   key={id}
                 >
                   <div>
@@ -109,7 +117,7 @@ const ChefRecipes = () => {
                     />
                     <span className="font-semibold">{rating} Stars</span>
                   </div>
-                  <button className="btn btn-secondary btn-outline gap-2 mt-5" onClick={handleSetFavorite} disabled={isFavourite}>
+                  <button className="btn btn-secondary btn-outline gap-2 mt-5" onClick={() => handleSetFavorite(id)} disabled={isFavourite}>
                     <MdFavorite size={20} /> Make It Favourite
                   </button>
                 </div>

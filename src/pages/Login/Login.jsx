@@ -54,7 +54,7 @@ const Login = () => {
       className="grid grid-cols-1 md:grid-cols-2 relative"
       style={{ minHeight: "calc(100vh - 64px)" }}
     >
-      <div className="card flex-shrink-0 w-full px-10">
+      <div className="card flex-shrink-0 w-full md:px-10">
         <div className="card-body">
           <div className="pt-5">
             <h2 className="text-3xl font-semibold">Welcome Back!</h2>
