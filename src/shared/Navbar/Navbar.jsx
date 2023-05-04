@@ -4,7 +4,10 @@ import { FiLogIn } from "react-icons/fi";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Navbar = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut().catch(err => console.log(err.message))
+  }
   return (
     <div className="sticky top-0 z-50 bg-white shadow-md">
       <div className="navbar bg-base-100 container mx-auto">
@@ -31,10 +34,24 @@ const Navbar = () => {
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <NavLink to="/">Home</NavLink>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "bg-orange-400" : ""
+                  }
+                  to="/"
+                >
+                  Home
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/blog">Blog</NavLink>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "bg-orange-500" : ""
+                  }
+                  to="/blog"
+                >
+                  Blog
+                </NavLink>
               </li>
             </ul>
           </div>
@@ -46,10 +63,30 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           {user ? (
-            <div className="avatar">
-              <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                <img src={user.photoURL} />
+            <div className="dropdown dropdown-hover">
+              <div className="avatar relative mt-2" tabIndex={0}>
+                <div className="w-10 rounded-full ring ring-info ring-offset-base-100 ring-offset-2">
+                  <img
+                    src={
+                      user.photoURL ||
+                      "https://icons.veryicon.com/png/o/internet--web/prejudice/user-128.png"
+                    }
+                    alt="user photo"
+                  />
+                  <div className="opacity-0 username transition absolute right-0 top-full w-fit p-3 rounded-md bg-info text-white font-bold"></div>
+                </div>
               </div>
+              <ul
+                tabIndex={0}
+                className="opacity-0 absolute -left-40 menu p-2 shadow bg-gray-100 rounded-box w-52"
+              >
+                <li>
+                  <a>{user.displayName || "User"}</a>
+                </li>
+                <li>
+                  <button onClick={handleLogOut}>Sign Out</button>
+                </li>
+              </ul>
             </div>
           ) : (
             <NavLink to="/login" className="btn btn-ghost btn-circle">

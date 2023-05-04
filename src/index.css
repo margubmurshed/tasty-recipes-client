@@ -22,3 +22,7 @@
   ::-webkit-scrollbar-thumb:hover {
     background: #555;
   }
+
+  .dropdown:hover ul{
+    opacity: 1;
+  }

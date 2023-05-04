@@ -63,8 +63,8 @@ const Home = () => {
               clickable: true,
             }}
           >
-            {[1, 2, 3, 4, 5, 6].map(() => (
-              <SwiperSlide>
+            {[1, 2, 3, 4, 5, 6].map((num) => (
+              <SwiperSlide key={num}>
                 <div className="text-center border rounded-md p-5">
                   <img src={Man} alt="mane" className="w-24 h-24 rounded-full object-cover mx-auto mb-5" />
                   <p>
@@ -80,7 +80,6 @@ const Home = () => {
                 </div>
               </SwiperSlide>
             ))}
-            <div class="swiper-pagination"></div>
           </Swiper>
         </div>
       </div>
