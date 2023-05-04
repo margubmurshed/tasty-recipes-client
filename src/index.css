@@ -2,10 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-.swiper-container {
-    overflow: visible !important;
+::-webkit-scrollbar {
+    width: 8px;
 }
-.swiper-pagination {
-    position: absolute !important;
-    bottom: -25px !important; 
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
 }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+    background: #888;
+    border: 1px solid white;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }

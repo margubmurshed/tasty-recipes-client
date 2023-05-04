@@ -56,7 +56,7 @@ const Login = () => {
           </form>
           <Link to="/register" className="mt-5">
             New to this website?
-            <span className="text-success font-semibold">Register now</span>
+            <span className="text-success font-semibold ml-2">Register now</span>
           </Link>
           <div className="flex flex-wrap gap-3 mt-5">
             <button className="btn btn-info w-full md:w-fit flex items-center gap-2">

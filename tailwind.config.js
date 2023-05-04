@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      height: {
+        'image-fixed': 'calc(100vh - 64px)',
+      }
+    }
   },
   plugins: [require("daisyui")]
 }
