@@ -10,7 +10,7 @@ import "@smastrom/react-rating/style.css";
 const ChefRecipes = () => {
   const [chefDetails, chefRecipes] = useLoaderData();
   const [favorites, setFavorites] = useState([]);
-  const { id:chefID, name, photo_url, years_of_experience, recipe_count } =
+  const { id:chefID, name, photo_url, years_of_experience, recipe_count, short_bio } =
     chefDetails;
 
   const handleSetFavorite = (id) => {
@@ -42,11 +42,7 @@ const ChefRecipes = () => {
             </div>
             <h1 className="mb-5 text-2xl md:text-5xl font-bold">{name}</h1>
             <p className="mb-5">
-              {name} is a renowned American chef who has made a name for himself
-              in the culinary world through his passion for bold flavors and
-              innovative cooking techniques. With a career spanning over three
-              decades, Bobby has become a household name and has cemented
-              himself as one of America's most celebrated chefs.
+              {short_bio}
             </p>
             <div className="stats shadow grid-flow-row w-full md:w-fit md:grid-flow-col">
               <div className="stat">
