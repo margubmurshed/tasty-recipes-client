@@ -21,7 +21,7 @@ const Home = () => {
           />
         </div>
         <div className="flex flex-col justify-center p-5">
-          <h2 className="text-5xl font-semibold md:flex md:flex-col mb-3">
+          <h2 className="text-3xl md:text-5xl font-semibold md:flex md:flex-col mb-3">
             <span>One thousand flavors</span> <span>in one place.</span>
           </h2>
           <p>
