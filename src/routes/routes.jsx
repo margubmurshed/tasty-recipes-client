@@ -7,6 +7,7 @@ import Register from "../pages/Register.jsx/Register";
 import ChefRecipes from "../pages/ChefRecipes/ChefRecipes";
 import { chefRecipeLoader } from "../loaders/ChefRecipesLoader";
 import NotFound from "../pages/NotFound/NotFound";
+import PrivateRoute from "./PrivateRoute";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -19,7 +20,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/chef/:id/recipes",
-        element: <ChefRecipes />,
+        element: <PrivateRoute><ChefRecipes /></PrivateRoute>,
         loader: chefRecipeLoader
       },
       {

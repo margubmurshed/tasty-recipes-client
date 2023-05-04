@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { FiLogIn } from "react-icons/fi";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Navbar = () => {
+  const { user } = useContext(AuthContext);
   return (
     <div className="sticky top-0 z-50 bg-white shadow-md">
       <div className="navbar bg-base-100 container mx-auto">
@@ -43,9 +45,17 @@ const Navbar = () => {
           </NavLink>
         </div>
         <div className="navbar-end">
-          <NavLink to="/login" className="btn btn-ghost btn-circle">
-            <FiLogIn size={20} />
-          </NavLink>
+          {user ? (
+            <div className="avatar">
+              <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                <img src={user.photoURL} />
+              </div>
+            </div>
+          ) : (
+            <NavLink to="/login" className="btn btn-ghost btn-circle">
+              <FiLogIn size={20} />
+            </NavLink>
+          )}
         </div>
       </div>
     </div>
