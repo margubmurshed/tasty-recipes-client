@@ -8,10 +8,12 @@ import ChefRecipes from "../pages/ChefRecipes/ChefRecipes";
 import { chefRecipeLoader } from "../loaders/ChefRecipesLoader";
 import NotFound from "../pages/NotFound/NotFound";
 import PrivateRoute from "./PrivateRoute";
+import ErrorElement from "../shared/ErrorElement/ErrorElement";
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
+    errorElement: <ErrorElement />,
     children:[
       {
         index: true,
