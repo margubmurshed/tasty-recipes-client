@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Outlet, useNavigation } from 'react-router-dom';
 import Navbar from '../shared/Navbar/Navbar';
 import Footer from '../shared/Footer/Footer';
 
 const MainLayout = () => {
     const navigation = useNavigation();
+
+    useEffect(() => {
+        window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+      }, []);
+      
     return (
         <div>
             <Navbar />

@@ -5,8 +5,8 @@ import {MdFastfood} from 'react-icons/md';
 import {AiFillLike} from 'react-icons/ai';
 import LazyLoad from "react-lazy-load";
 
-const ChefsSection = () => {
-  const { chefs } = useLoaderData();
+const ChefsSection = ({ chefs }) => {
+  // const { chefs } = useLoaderData();
   return (
     <div className="container mx-auto px-5 py-16">
       <h2 className="text-3xl text-center font-bold">Our Chefs</h2>

@@ -18,7 +18,7 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
-        loader: () => fetch("https://tasty-recipes-server-margubtech-gmailcom.vercel.app/allChefsDetails")
+        // loader: () => fetch("https://tasty-recipes-server-margubtech-gmailcom.vercel.app/allChefsDetails")
       },
       {
         path: "/chef/:id/recipes",
