@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
-import Man from "../../../assets/Home/man.png";
+import { info } from "../../../assets/Home/slider";
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -33,23 +33,18 @@ const Slider = () => {
             clickable: true,
           }}
         >
-          {[1, 2, 3, 4, 5, 6].map((num) => (
-            <SwiperSlide key={num}>
+          {info.map(({ id, name, profession, photoUrl, recipeReview }) => (
+            <SwiperSlide key={id}>
               <div className="text-center border rounded-md p-5">
                 <img
-                  src={Man}
+                  src={photoUrl}
                   alt="mane"
                   className="w-24 h-24 rounded-full object-cover mx-auto mb-5"
                 />
-                <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod
-                  deleniti minima, dolore placeat ab quisquam laborum doloribus
-                  facere quis, eos odit nemo? Nobis, officiis numquam. Odio esse
-                  nisi accusantium perspiciatis.
-                </p>
+                <p>{recipeReview}</p>
                 <div className="mt-5">
-                  <h3 className="font-semibold text-xl">Marcus Stoinis</h3>
-                  <p>Student</p>
+                  <h3 className="font-semibold text-xl">{name}</h3>
+                  <p>{profession}</p>
                 </div>
               </div>
             </SwiperSlide>
