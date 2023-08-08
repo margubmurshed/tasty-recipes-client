@@ -11,8 +11,8 @@ const NewestRecipes = () => {
         <h2 className="text-center text-3xl text-white font-bold mb-5 pt-10 pb-5 uppercase">
           Newest Recipes
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          <div className="rounded-md bg-white p-5 border -mb-10 shadow-md">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 p-5">
+          <div className="rounded-md bg-white p-5 border md:-mb-10 shadow-md">
             <img
               src={image1}
               alt="Texas-Style Beef Brisket"
@@ -29,7 +29,7 @@ const NewestRecipes = () => {
             </Link>
             </div>
           </div>
-          <div className="rounded-md bg-white p-5 border -mb-10 shadow-md">
+          <div className="rounded-md bg-white p-5 border md:-mb-10 shadow-md">
             <img
               src={image2}
               alt="Texas-Style Beef Brisket"
@@ -46,7 +46,7 @@ const NewestRecipes = () => {
             </Link>
             </div>
           </div>
-          <div className="rounded-md bg-white p-5 border -mb-10 shadow-md">
+          <div className="rounded-md bg-white p-5 border md:-mb-10 shadow-md">
             <img
               src={image3}
               alt="Texas-Style Beef Brisket"
