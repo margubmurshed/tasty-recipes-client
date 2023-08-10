@@ -7,7 +7,7 @@ A brief description of what this project does
 
 ## Description
 
-It's an American Cuisine recipe web app which lets a user see famous chefs recipes.
+Tasty Recipes is an online recipe-sharing platform where verified and popular American chefs share their latest recipes for cooking and food lovers. Users can sign in using Google, GitHub, and email. Users have to sign in to view their favorite recipes. They can make a recipe favorite using 'Make It Favorite' button to find selected recipes quicker.
 
 ## Features
 
