@@ -22,7 +22,7 @@ const NewestRecipes = () => {
             <h3 className="text-xl font-semibold ">Texas-Style Beef Brisket</h3>
             <h4 className="font-semibold text-gray-200 text-3xl">Gordon Ramsay</h4>
             <Link
-              to="http://localhost:5173/chef/7525bbe3632d/recipes"
+              to="https://tasty-recipes-margub.web.app/chef/7525bbe3632d/recipes"
               className="btn btn-primary bg-orange-500 border-orange-500 hover:border-orange-500 hover:bg-orange-600"
             >
               View Recipe
@@ -39,7 +39,7 @@ const NewestRecipes = () => {
             <h3 className="text-xl font-semibold ">All-American Banana Split</h3>
             <h4 className="font-semibold text-gray-200 text-3xl">Mario Batali</h4>
             <Link
-              to="http://localhost:5173/chef/7525bbe3632d/recipes"
+              to="https://tasty-recipes-margub.web.app/chef/7525bbe3632d/recipes"
               className="btn btn-primary bg-orange-500 border-orange-500 hover:border-orange-500 hover:bg-orange-600"
             >
               View Recipe
@@ -56,7 +56,7 @@ const NewestRecipes = () => {
             <h3 className="text-xl font-semibold">Golden Apple Pie</h3>
             <h4 className="font-semibold text-gray-200 text-3xl">Ina Garten</h4>
             <Link
-              to="http://localhost:5173/chef/7525bbe3632d/recipes"
+              to="https://tasty-recipes-margub.web.app/chef/7525bbe3632d/recipes"
               className="btn btn-primary bg-orange-500 border-orange-500 hover:border-orange-500 hover:bg-orange-600"
             >
               View Recipe
